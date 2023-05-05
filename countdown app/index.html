@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+<style>
+.box{
+    margin: 200px auto;
+    background: #777;
+}
+h1{
+    font-weight: 700;
+    font-size: 76px; 
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+    <div class="box rounded w-50 text-center shadow-lg p-4">
+        
+        <button class="btn btn-primary button1"> Up</button>
+        <hr>
+        <h1 class="text-seconddary fst-italic">0</h1>
+        <hr>
+        <button class="btn btn-warning button2">Down</button>
+    </div>
+</div>
+<audio src="./assets/audio/start-13691.mp3" class="adio1"></audio>
+<audio src="./assets/audio/wrong-answer-126515.mp3" class="adio3"></audio>
+
+
+    <script>
+        const button1 = document.querySelector('.button1');
+        const button2 = document.querySelector('.button2');
+        const h1 = document.querySelector('h1');
+        const adio1 = document.querySelector('.adio1');
+        const adio3 = document.querySelector('.adio3');
+
+        let count = 0;
+
+        button1.onclick =()=>{
+            count++;
+            if(count <= 10){
+            h1.innerHTML = count;
+            adio1.play()
+        }else{
+            count= 10;
+            adio3.play();
+        }
+        }
+        button2.onclick= () => {
+            count--;
+            if(count >= 0){
+                h1.innerHTML=count;
+                adio1.play();
+            }else{
+                count = 0;
+                adio3.play();
+            }
+        }
+    </script>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
